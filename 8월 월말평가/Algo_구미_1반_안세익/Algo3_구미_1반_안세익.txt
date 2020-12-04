@@ -1,0 +1,24 @@
+def pseudocode(card): # 완전탐색으로 가장 작은 합을 찾는다.
+    Value = 0 # N명의 학생들이 선택한 카드의 합을 구하기 위한 변수 초기화
+    idx = 0 # 앞 사람이 선택한 카드의 열 인덱스를 저장하기 위한 변수 선언
+
+    for i in range(1, N+1): # 학생 수 N만큼 반복하여 선택한다.
+        card_list = card[i] # i번째 학생이 뽑을 수 있는 카드의 리스트
+        stack = list() # dfs 실행을 위한 stack
+        stack.append(card_list) # 스택에 추가
+        while stack : # 스택이 비어있지 않은 경우에 대해 실행
+            tmp = stack.pop()
+            # < -- 선택할 수 있는 4가지 카드 중에서 한 가지를 선택하여 값(card[i][j]을 Value에 더하고 idx에 그 카드의 인덱스(j)를 저장한다.
+            # < -- 위 행(앞 사람)에서 선택한 카드의 열 인덱스(idx)와 다른 나머지 3가지 중에서 한가지 선택하여 Value에 더한다.
+              ex) 위 행(앞 사람)에서 선택된 카드의 열 인덱스가 2라면 현재 행(현재 카드를 선택하는 사람)에서는 열 인덱스 2를 제외한 0, 1, 3중에서 카드를 선택한다.
+            # < -- 마지막 사람까지 카드를 선택하여 값을 Value에 더하고 나면
+
+        if Value < minValue: # Value와 minValue를 비교하여 Value가 minValue보다 작으면 minValue에 Value를 저장해놓는다.
+            minValue = Value
+
+        # 위의 과정을 모든 경우의 수를 대상으로 반복하여 가장 작은 minValue 값을 찾는다.
+
+
+card = [[13, 1, 4, 5], [7, 8, 4, 5], ...]
+N = len(card)
+minValue = (13 * N) # N명의 학생이 모두 K만 선택했다고 가정할 때 나올 수 있는 가장 큰수로 초기화
