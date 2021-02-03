@@ -47,7 +47,7 @@ def combine_groups(groups):
                 break
         else:
             new_groups.append([groups[g]])
-    print(new_groups)
+    # print(new_groups)
 
     groups = []
     for i in range(len(new_groups)):

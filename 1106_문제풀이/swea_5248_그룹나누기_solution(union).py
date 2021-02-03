@@ -1,7 +1,6 @@
 import sys
 sys.stdin = open('swea_5248_그룹나누기_solution.txt')
 
-
 def make_set(x):
     p[x] = x
 
